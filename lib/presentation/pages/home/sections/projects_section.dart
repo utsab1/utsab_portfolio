@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
-import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
-import 'package:nimbus/presentation/widgets/project_item.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button.dart';
+import 'package:aryal/presentation/widgets/content_area.dart';
+import 'package:aryal/presentation/widgets/aryal_info_section.dart';
+import 'package:aryal/presentation/widgets/project_item.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -37,9 +37,9 @@ class _ProjectsSectionState extends State<ProjectsSection>
   late Animation<double> _projectScaleAnimation;
   List<List<ProjectData>> projects = [
     Data.allProjects,
-    Data.branding,
-    Data.packaging,
-    Data.photograhy,
+    Data.deployed,
+    Data.animated,
+    Data.ui,
     Data.webDesign,
   ];
   late List<ProjectData> selectedProject;
@@ -105,9 +105,9 @@ class _ProjectsSectionState extends State<ProjectsSection>
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildNimbusInfoSectionSm(),
+                    _buildaryalInfoSectionSm(),
                     SpaceH40(),
-                    NimbusButton(
+                    AryalButton(
                       buttonTitle: StringConst.ALL_PROJECTS,
                       buttonColor: AppColors.primaryColor,
                       onPressed: () {},
@@ -153,10 +153,10 @@ class _ProjectsSectionState extends State<ProjectsSection>
                         children: [
                           ContentArea(
                             width: contentAreaWidth * 0.6,
-                            child: _buildNimbusInfoSectionLg(),
+                            child: _buildaryalInfoSectionLg(),
                           ),
                           Spacer(),
-                          NimbusButton(
+                          AryalButton(
                             buttonTitle: StringConst.ALL_PROJECTS,
                             buttonColor: AppColors.primaryColor,
                             onPressed: () {},
@@ -183,8 +183,8 @@ class _ProjectsSectionState extends State<ProjectsSection>
     );
   }
 
-  Widget _buildNimbusInfoSectionSm() {
-    return NimbusInfoSection2(
+  Widget _buildaryalInfoSectionSm() {
+    return AryalInfoSection2(
       sectionTitle: StringConst.MY_WORKS,
       title1: StringConst.MEET_MY_PROJECTS,
       hasTitle2: false,
@@ -193,8 +193,8 @@ class _ProjectsSectionState extends State<ProjectsSection>
     );
   }
 
-  Widget _buildNimbusInfoSectionLg() {
-    return NimbusInfoSection1(
+  Widget _buildaryalInfoSectionLg() {
+    return AryalInfoSection1(
       sectionTitle: StringConst.MY_WORKS,
       title1: StringConst.MEET_MY_PROJECTS,
       hasTitle2: false,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/values/values.dart';
 
-class AnimatedNimbusButton extends StatefulWidget {
+class AnimatedAryalButton extends StatefulWidget {
   final String title;
   final Color titleColor;
   final double width;
@@ -21,7 +21,7 @@ class AnimatedNimbusButton extends StatefulWidget {
   final Curve curve;
   final GestureTapCallback? onTap;
 
-  AnimatedNimbusButton({
+  AnimatedAryalButton({
     required this.title,
     required this.iconData,
     this.titleColor = AppColors.white,
@@ -50,10 +50,10 @@ class AnimatedNimbusButton extends StatefulWidget {
   });
 
   @override
-  _AnimatedNimbusButtonState createState() => _AnimatedNimbusButtonState();
+  _AnimatedAryalButtonState createState() => _AnimatedAryalButtonState();
 }
 
-class _AnimatedNimbusButtonState extends State<AnimatedNimbusButton> {
+class _AnimatedAryalButtonState extends State<AnimatedAryalButton> {
   bool _isHovering = false;
 
   @override
@@ -95,7 +95,9 @@ class _AnimatedNimbusButtonState extends State<AnimatedNimbusButton> {
                           widget.title,
                           style: widget.titleStyle ??
                               textTheme.button?.copyWith(
-                                color:_isHovering ? widget.titleColor : Colors.transparent,
+                                color: _isHovering
+                                    ? widget.titleColor
+                                    : Colors.transparent,
                                 fontSize: Sizes.TEXT_SIZE_14,
                               ),
                         ),

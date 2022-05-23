@@ -1,13 +1,13 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/pages/home/sections/header_section/widgets.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
-import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/pages/home/sections/header_section/widgets.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button.dart';
+import 'package:aryal/presentation/widgets/content_area.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button_link.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/utils/functions.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 const double bodyTextSizeLg = 16.0;
@@ -69,7 +69,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
 
     List<Widget> cardsForTabletView = buildCardRow(
       context: context,
-      data: Data.nimbusCardData,
+      data: Data.aryalCardData,
       width: contentAreaWidth * 0.4,
       isWrap: true,
     );
@@ -225,44 +225,29 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                     ),
                                   ],
                                 ),
-                                SpaceW16(),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.BEHANCE}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
                               ],
                             ),
                             SpaceH40(),
                             Row(
                               children: [
-                                NimbusButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.DOWNLOAD_CV,
-                                  buttonColor: AppColors.primaryColor,
-                                  onPressed: () {},
-                                ),
+                                // AryalButton(
+                                //   width: buttonWidth,
+                                //   height: buttonHeight,
+                                //   buttonTitle: StringConst.DOWNLOAD_CV,
+                                //   buttonColor: AppColors.primaryColor,
+                                //   onPressed: () {},
+                                // ),
                                 SpaceW16(),
-                                NimbusButton(
+                                AryalButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,
-                                  opensUrl: true,
+                                  // opensUrl: true,
                                   url: StringConst.EMAIL_URL,
-                                  // onPressed: () =>
-                                  //     openUrlLink(StringConst.EMAIL_URL),
+                                  onPressed: () =>
+                                      openUrlLink(StringConst.EMAIL_URL),
                                 ),
-                                // NimBusButtonLink(
+                                // AryalButtonLink(
                                 //   width: buttonWidth,
                                 //   height: buttonHeight,
                                 //   url: StringConst.EMAIL_URL,
@@ -271,9 +256,9 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                               ],
                             ),
                             SpaceH30(),
-                            Wrap(
-                              children: buildSocialIcons(Data.socialData),
-                            )
+                            // Wrap(
+                            //   children: buildSocialIcons(Data.socialData),
+                            // )
                           ],
                         ),
                       ],
@@ -295,7 +280,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: buildCardRow(
                             context: context,
-                            data: Data.nimbusCardData,
+                            data: Data.aryalCardData,
                             width: contentAreaWidth,
                             isHorizontal: false,
                             hasAnimation: false,
@@ -329,7 +314,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                             children: [
                               ...buildCardRow(
                                 context: context,
-                                data: Data.nimbusCardData,
+                                data: Data.aryalCardData,
                                 width: contentAreaWidth / 3.8,
                               ),
                               Spacer(),

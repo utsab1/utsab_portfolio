@@ -1,21 +1,22 @@
+import 'package:aryal/presentation/pages/home/sections/brand_section.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/pages/home/sections/about_me_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/awards_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/blog_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/footer_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/header_section/header_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
-import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_web.dart';
-import 'package:nimbus/presentation/pages/home/sections/projects_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/skills_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart';
-import 'package:nimbus/presentation/widgets/app_drawer.dart';
-import 'package:nimbus/presentation/widgets/nav_item.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/pages/home/sections/about_me_section.dart';
+import 'package:aryal/presentation/pages/home/sections/awards_section.dart';
+import 'package:aryal/presentation/pages/home/sections/blog_section.dart';
+import 'package:aryal/presentation/pages/home/sections/footer_section.dart';
+import 'package:aryal/presentation/pages/home/sections/header_section/header_section.dart';
+import 'package:aryal/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
+import 'package:aryal/presentation/pages/home/sections/nav_section/nav_section_web.dart';
+import 'package:aryal/presentation/pages/home/sections/projects_section.dart';
+import 'package:aryal/presentation/pages/home/sections/skills_section.dart';
+import 'package:aryal/presentation/pages/home/sections/statistics_section.dart';
+import 'package:aryal/presentation/widgets/app_drawer.dart';
+import 'package:aryal/presentation/widgets/nav_item.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/utils/functions.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage>
     NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
     NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
     NavItemData(name: StringConst.AWARDS, key: GlobalKey()),
-    NavItemData(name: StringConst.BLOG, key: GlobalKey()),
+    // NavItemData(name: StringConst.BRAND, key: GlobalKey()),
   ];
 
   @override
@@ -194,10 +195,10 @@ class _HomePageState extends State<HomePage>
                             child: AwardsSection(),
                           ),
                           SpaceH40(),
-                          Container(
-                            key: navItems[5].key,
-                            child: BlogSection(),
-                          ),
+                          // Container(
+                          //   key: navItems[5].key,
+                          //   child: BrandSection(),
+                          // ),
                           FooterSection(),
                         ],
                       )

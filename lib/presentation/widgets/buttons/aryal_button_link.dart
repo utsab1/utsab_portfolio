@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/values/values.dart';
 import 'package:url_launcher/link.dart';
 
-import 'nimbus_button.dart';
+import 'aryal_button.dart';
 
-class NimBusButtonLink extends StatelessWidget {
-  const NimBusButtonLink({
+class AryalButtonLink extends StatelessWidget {
+  const AryalButtonLink({
     Key? key,
     required this.buttonTitle,
     required this.url,
@@ -31,7 +31,7 @@ class NimBusButtonLink extends StatelessWidget {
       uri: Uri.parse(url),
       target: linkTarget,
       builder: (context, followLink) {
-        return NimbusButton(
+        return AryalButton(
           width: width,
           height: height,
           buttonTitle: buttonTitle,

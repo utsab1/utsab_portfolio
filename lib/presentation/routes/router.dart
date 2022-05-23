@@ -1,4 +1,4 @@
-import 'package:nimbus/presentation/pages/home/home_page.dart';
+import 'package:aryal/presentation/pages/home/home_page.dart';
 import 'package:auto_route/annotations.dart';
 
 @MaterialAutoRouter(

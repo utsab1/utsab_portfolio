@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/empty.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/empty.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
-class NimbusInfoSection1 extends StatelessWidget {
+class AryalInfoSection1 extends StatelessWidget {
   final String sectionTitle;
   final String title1;
   final String title2;
@@ -20,7 +20,7 @@ class NimbusInfoSection1 extends StatelessWidget {
   final double dividerHeight;
   final Widget? child;
 
-  NimbusInfoSection1({
+  AryalInfoSection1({
     required this.sectionTitle,
     required this.title1,
     required this.body,
@@ -115,7 +115,7 @@ class NimbusInfoSection1 extends StatelessWidget {
   }
 }
 
-class NimbusInfoSection2 extends StatelessWidget {
+class AryalInfoSection2 extends StatelessWidget {
   final String sectionTitle;
   final String title1;
   final String title2;
@@ -130,7 +130,7 @@ class NimbusInfoSection2 extends StatelessWidget {
   final double dividerWidth;
   final Widget? child;
 
-  NimbusInfoSection2({
+  AryalInfoSection2({
     required this.sectionTitle,
     required this.title1,
     required this.body,

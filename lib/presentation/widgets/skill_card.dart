@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/widgets/circular_container.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/widgets/circular_container.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
 class SkillCardData {
   final String title;
   final String description;
   final IconData iconData;
 
-  SkillCardData({required this.title, required this.iconData,required this.description});
+  SkillCardData(
+      {required this.title, required this.iconData, required this.description});
 }
 
 class SkillCard extends StatefulWidget {
@@ -51,7 +52,6 @@ class SkillCard extends StatefulWidget {
 }
 
 class _SkillCardState extends State<SkillCard> {
-
   @override
   Widget build(BuildContext context) {
     return Container(

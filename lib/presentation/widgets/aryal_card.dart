@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/widgets/empty.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/widgets/empty.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
-class NimBusCardData {
+class AryalCardData {
   IconData leadingIcon;
   IconData trailingIcon;
   Color trailingIconColor;
@@ -12,7 +12,7 @@ class NimBusCardData {
   String title;
   String subtitle;
 
-  NimBusCardData({
+  AryalCardData({
     required this.leadingIcon,
     required this.trailingIcon,
     this.circleBgColor = AppColors.black,
@@ -23,8 +23,8 @@ class NimBusCardData {
   });
 }
 
-class NimBusCard extends StatefulWidget {
-  NimBusCard({
+class aryalCard extends StatefulWidget {
+  aryalCard({
     this.leading,
     this.title,
     this.subtitle,
@@ -62,10 +62,10 @@ class NimBusCard extends StatefulWidget {
   final bool hasAnimation;
 
   @override
-  _NimBusCardState createState() => _NimBusCardState();
+  _aryalCardState createState() => _aryalCardState();
 }
 
-class _NimBusCardState extends State<NimBusCard>
+class _aryalCardState extends State<aryalCard>
     with SingleTickerProviderStateMixin {
   bool _hovering = false;
   late AnimationController _controller;

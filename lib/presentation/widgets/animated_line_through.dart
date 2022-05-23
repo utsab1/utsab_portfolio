@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/values/values.dart';
 
 class AnimatedLineThrough extends StatefulWidget {
   AnimatedLineThrough({
@@ -79,7 +79,6 @@ class _AnimatedLineThroughState extends State<AnimatedLineThrough>
 
   void _mouseEnter(bool hovering) {
     if (hovering) {
-
       setState(() {
         controller.forward();
         _isHovering = hovering;

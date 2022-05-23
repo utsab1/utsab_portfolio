@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/pages/home/sections/header_section/header_section_mobile.dart';
-import 'package:nimbus/presentation/pages/home/sections/header_section/header_section_web.dart';
+import 'package:aryal/presentation/pages/home/sections/header_section/header_section_mobile.dart';
+import 'package:aryal/presentation/pages/home/sections/header_section/header_section_web.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HeaderSection extends StatelessWidget {

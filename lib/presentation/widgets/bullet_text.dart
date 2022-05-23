@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
 class TextWithBullet extends StatelessWidget {
   TextWithBullet({

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
-import 'package:nimbus/presentation/widgets/buttons/social_button.dart';
-import 'package:nimbus/presentation/widgets/circular_container.dart';
-import 'package:nimbus/presentation/widgets/nimbus_card.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/aryal_link.dart';
+import 'package:aryal/presentation/widgets/buttons/social_button.dart';
+import 'package:aryal/presentation/widgets/circular_container.dart';
+import 'package:aryal/presentation/widgets/aryal_card.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
 class HeaderImage extends StatefulWidget {
   const HeaderImage({
@@ -72,7 +72,7 @@ List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
       //     size: Sizes.ICON_SIZE_18,
       //   ),
       // ),
-      NimBusLink(
+      AryalLink(
         url: socialItems[index].url,
         child: Icon(
           socialItems[index].iconData,
@@ -88,7 +88,7 @@ List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
 
 List<Widget> buildCardRow({
   required BuildContext context,
-  required List<NimBusCardData> data,
+  required List<AryalCardData> data,
   required double width,
   bool isHorizontal = true,
   bool isWrap = false,
@@ -116,7 +116,7 @@ List<Widget> buildCardRow({
   );
   for (int index = 0; index < data.length; index++) {
     items.add(
-      NimBusCard(
+      aryalCard(
         width: width,
         height: responsiveSize(
           context,

@@ -1,4 +1,4 @@
-package com.davidcobbina.nimbus
+package com.davidcobbina.aryal
 
 import io.flutter.embedding.android.FlutterActivity
 

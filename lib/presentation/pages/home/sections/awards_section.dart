@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/bullet_text.dart';
-import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/bullet_text.dart';
+import 'package:aryal/presentation/widgets/content_area.dart';
+import 'package:aryal/presentation/widgets/aryal_info_section.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-
 class AwardsSection extends StatefulWidget {
-
   AwardsSection({Key? key});
   @override
   _AwardsSectionState createState() => _AwardsSectionState();
@@ -25,7 +23,7 @@ class _AwardsSectionState extends State<AwardsSection>
   @override
   void initState() {
     super.initState();
-  
+
     _controller = AnimationController(
       duration: const Duration(seconds: 20),
       vsync: this,
@@ -80,9 +78,9 @@ class _AwardsSectionState extends State<AwardsSection>
                     builder: (context, sizingInformation) {
                       double screenWidth = sizingInformation.screenSize.width;
                       if (screenWidth < (RefinedBreakpoints().tabletSmall)) {
-                        return _buildNimbusInfoSectionSm();
+                        return _buildaryalInfoSectionSm();
                       } else {
-                        return _buildNimbusInfoSectionLg();
+                        return _buildaryalInfoSectionLg();
                       }
                     },
                   ),
@@ -121,7 +119,7 @@ class _AwardsSectionState extends State<AwardsSection>
                             child: Column(
                               children: [
                                 Spacer(),
-                                _buildNimbusInfoSectionLg(),
+                                _buildaryalInfoSectionLg(),
                                 Spacer(flex: 2),
                               ],
                             ),
@@ -143,25 +141,25 @@ class _AwardsSectionState extends State<AwardsSection>
     );
   }
 
-  Widget _buildNimbusInfoSectionSm() {
-    return NimbusInfoSection2(
+  Widget _buildaryalInfoSectionSm() {
+    return AryalInfoSection2(
       sectionTitle: StringConst.MY_AWARDS,
       title1: StringConst.AWARDS_TITLE,
       hasTitle2: false,
       body: StringConst.AWARDS_DESC,
       child: Column(
         children: [
-          _buildAwards1(),
+          // _buildAwards1(),
           SpaceH40(),
-          _buildAwards2(),
+          // _buildAwards2(),
           SpaceH40(),
         ],
       ),
     );
   }
 
-  Widget _buildNimbusInfoSectionLg() {
-    return NimbusInfoSection1(
+  Widget _buildaryalInfoSectionLg() {
+    return AryalInfoSection1(
       sectionTitle: StringConst.MY_AWARDS,
       title1: StringConst.AWARDS_TITLE,
       hasTitle2: false,
@@ -169,9 +167,9 @@ class _AwardsSectionState extends State<AwardsSection>
       child: Container(
         child: Row(
           children: [
-            _buildAwards1(),
+            // _buildAwards1(),
             Spacer(),
-            _buildAwards2(),
+            // _buildAwards2(),
             Spacer(flex: 4),
           ],
         ),
@@ -232,56 +230,56 @@ class _AwardsSectionState extends State<AwardsSection>
               AnimatedPositioned(
                 left: text1InView ? textPosition : -150,
                 child: Text(StringConst.MY, style: titleStyle),
-                 curve: Curves.fastOutSlowIn,
-                 onEnd: (){
-                   setState(() {
-                     text2InView = true;
-                   });
-                 },
-                 duration: Duration(milliseconds: 750),
+                curve: Curves.fastOutSlowIn,
+                onEnd: () {
+                  setState(() {
+                    text2InView = true;
+                  });
+                },
+                duration: Duration(milliseconds: 750),
               ),
               AnimatedPositioned(
                 right: text2InView ? textPosition : -150,
                 child: Text(StringConst.CV, style: titleStyle),
-                 curve: Curves.fastOutSlowIn,
-                 duration: Duration(milliseconds: 750),
+                curve: Curves.fastOutSlowIn,
+                duration: Duration(milliseconds: 750),
               ),
             ],
           ),
         ],
       ),
     );
+    // }
+
+    // Widget _buildAwards1() {
+    //   TextTheme textTheme = Theme.of(context).textTheme;
+    //   return Column(
+    //     crossAxisAlignment: CrossAxisAlignment.start,
+    //     children: [
+    //       Text(
+    //         StringConst.AWARDS_TYPE_TITLE_1,
+    //         style: textTheme.headline6,
+    //       ),
+    //       SpaceH16(),
+    //       ..._buildAwards(Data.awards1),
+    //     ],
+    //   );
   }
 
-  Widget _buildAwards1() {
-    TextTheme textTheme = Theme.of(context).textTheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          StringConst.AWARDS_TYPE_TITLE_1,
-          style: textTheme.headline6,
-        ),
-        SpaceH16(),
-        ..._buildAwards(Data.awards1),
-      ],
-    );
-  }
-
-  Widget _buildAwards2() {
-    TextTheme textTheme = Theme.of(context).textTheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          StringConst.AWARDS_TYPE_TITLE_2,
-          style: textTheme.headline5,
-        ),
-        SpaceH16(),
-        ..._buildAwards(Data.awards1),
-      ],
-    );
-  }
+  // Widget _buildAwards2() {
+  //   TextTheme textTheme = Theme.of(context).textTheme;
+  //   return Column(
+  //     crossAxisAlignment: CrossAxisAlignment.start,
+  //     children: [
+  //       Text(
+  //         StringConst.AWARDS_TYPE_TITLE_2,
+  //         style: textTheme.headline5,
+  //       ),
+  //       SpaceH16(),
+  //       ..._buildAwards(Data.awards1),
+  //     ],
+  //   );
+  // }
 
   List<Widget> _buildAwards(List<String> awards) {
     List<Widget> items = [];

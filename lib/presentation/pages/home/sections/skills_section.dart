@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
-import 'package:nimbus/presentation/widgets/skill_card.dart';
-import 'package:nimbus/presentation/widgets/skill_level.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/content_area.dart';
+import 'package:aryal/presentation/widgets/aryal_info_section.dart';
+import 'package:aryal/presentation/widgets/skill_card.dart';
+import 'package:aryal/presentation/widgets/skill_level.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 const double kRunSpacing = 20.0;
 const double kMainAxisSpacing = 16.0;
 const double kCrossAxisSpacing = 16.0;
-
 
 class SkillsSection extends StatefulWidget {
   SkillsSection({Key? key});
@@ -74,7 +73,7 @@ class _SkillsSectionState extends State<SkillsSection>
                   children: [
                     ContentArea(
                       width: contentAreaWidthSm,
-                      child: _buildNimbusSm(width: contentAreaWidthSm),
+                      child: _buildaryalSm(width: contentAreaWidthSm),
                     ),
                     SpaceH40(),
                     ContentArea(
@@ -104,7 +103,7 @@ class _SkillsSectionState extends State<SkillsSection>
                   children: [
                     ContentArea(
                       width: contentAreaWidthSm,
-                      child: _buildNimbusSm(width: contentAreaWidthSm),
+                      child: _buildaryalSm(width: contentAreaWidthSm),
                     ),
                     SpaceH40(),
                     ContentArea(
@@ -131,7 +130,7 @@ class _SkillsSectionState extends State<SkillsSection>
                   children: [
                     ContentArea(
                       width: contentAreaWidthLg,
-                      child: _buildNimbusLg(width: contentAreaWidthLg),
+                      child: _buildaryalLg(width: contentAreaWidthLg),
                     ),
                     ContentArea(
                       width: contentAreaWidthLg,
@@ -166,7 +165,6 @@ class _SkillsSectionState extends State<SkillsSection>
           skillLevelWidth: width,
           controller: _controller,
           skill: skillLevels[index].skill,
-          
           level: skillLevels[index].level,
         ),
       );
@@ -231,7 +229,7 @@ class _SkillsSectionState extends State<SkillsSection>
     return items;
   }
 
-  Widget _buildNimbusLg({required double width}) {
+  Widget _buildaryalLg({required double width}) {
     return Container(
       child: Row(
         children: [
@@ -239,18 +237,18 @@ class _SkillsSectionState extends State<SkillsSection>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                NimbusInfoSection1(
+                AryalInfoSection1(
                   sectionTitle: StringConst.MY_SKILLS,
                   title1: StringConst.SKILLS_TITLE_1,
                   title2: StringConst.SKILLS_TITLE_2,
                   body: StringConst.SKILLS_DESC,
-                  child: Wrap(
-                    runSpacing: kRunSpacing,
-                    children: _buildSkillSection(
-                      Data.skillLevelData,
-                      width,
-                    ),
-                  ),
+                  // child: Wrap(
+                  //   runSpacing: kRunSpacing,
+                  //   // children: _buildSkillSection(
+                  //   //   Data.skillLevelData,
+                  //   //   width,
+                  //   // ),
+                  // ),
                 ),
               ],
             ),
@@ -260,19 +258,19 @@ class _SkillsSectionState extends State<SkillsSection>
     );
   }
 
-  Widget _buildNimbusSm({required double width}) {
-    return NimbusInfoSection2(
+  Widget _buildaryalSm({required double width}) {
+    return AryalInfoSection2(
       sectionTitle: StringConst.MY_SKILLS,
       title1: StringConst.SKILLS_TITLE_1,
       title2: StringConst.SKILLS_TITLE_2,
       body: StringConst.SKILLS_DESC,
-      child: Wrap(
-        runSpacing: kRunSpacing,
-        children: _buildSkillSection(
-          Data.skillLevelData,
-          width,
-        ),
-      ),
+      // child: Wrap(
+      //   runSpacing: kRunSpacing,
+      //   children: _buildSkillSection(
+      //     Data.skillLevelData,
+      //     width,
+      //   ),
+      // ),
     );
   }
 }

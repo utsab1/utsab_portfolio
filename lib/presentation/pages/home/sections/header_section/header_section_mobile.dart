@@ -1,12 +1,14 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:aryal/utils/functions.dart';
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/pages/home/sections/header_section/widgets.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
-import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/pages/home/sections/header_section/widgets.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button.dart';
+import 'package:aryal/presentation/widgets/content_area.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button_link.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
@@ -24,6 +26,19 @@ class HeaderSectionMobile extends StatefulWidget {
 class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  void _launchURL() async {
+    final Uri params = Uri(
+      scheme: 'mailto',
+      path: StringConst.DEV_EMAIL,
+      query: 'subject= Hire ', //add subject and body here
+    );
+    String url = params.toString();
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print('Could not launch $url');
+    }
+  }
 
   @override
   void initState() {
@@ -205,40 +220,21 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                     ),
                                   ],
                                 ),
-                                SpaceW16(),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${StringConst.BEHANCE}:",
-                                      style: socialTitleStyle,
-                                    ),
-                                    SpaceH8(),
-                                    SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
-                                      style: bodyTextStyle,
-                                    ),
-                                  ],
-                                ),
                               ],
                             ),
                             SpaceH40(),
                             Row(
                               children: [
-                                NimbusButton(
-                                  width: buttonWidth,
-                                  height: buttonHeight,
-                                  buttonTitle: StringConst.DOWNLOAD_CV,
-                                  onPressed: () {},
-                                ),
                                 SpaceW16(),
-                                NimbusButton(
+                                AryalButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: StringConst.HIRE_ME_NOW,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    openUrlLink(StringConst.EMAIL_URL);
+                                  },
                                 ),
-                                // NimBusButtonLink(
+                                // AryalButtonLink(
                                 //   width: buttonWidth,
                                 //   height: buttonHeight,
                                 //   url: StringConst.EMAIL_URL,
@@ -266,7 +262,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                 child: Column(
                   children: buildCardRow(
                     context: context,
-                    data: Data.nimbusCardData,
+                    data: Data.aryalCardData,
                     width: contentAreaWidth,
                     isHorizontal: false,
                     hasAnimation: false,

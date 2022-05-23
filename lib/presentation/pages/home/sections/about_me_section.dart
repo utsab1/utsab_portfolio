@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/social_button_2.dart';
-import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/empty.dart';
-import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/buttons/social_button_2.dart';
+import 'package:aryal/presentation/widgets/content_area.dart';
+import 'package:aryal/presentation/widgets/empty.dart';
+import 'package:aryal/presentation/widgets/aryal_info_section.dart';
+import 'package:aryal/presentation/widgets/aryal_link.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/utils/functions.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -151,7 +151,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
           buttonColor: data[index].buttonColor,
           iconColor: data[index].iconColor,
         ),
-        // NimBusLink(
+        // AryalLink(
         //   url: data[index].url,
         //   child: SocialButton2(
         //     width: width,
@@ -276,13 +276,13 @@ class _AboutMeSectionState extends State<AboutMeSection>
           builder: (context, sizingInformation) {
             double screenWidth = sizingInformation.screenSize.width;
             if (screenWidth < (RefinedBreakpoints().tabletNormal)) {
-              return nimbusInfoSectionSm(width: width);
+              return aryalInfoSectionSm(width: width);
             } else {
               //This container takes 85% of the space and leave 15% as spacing
               //between the blob and the content
               return Container(
                 width: width * 0.85,
-                child: nimbusInfoSectionLg(),
+                child: aryalInfoSectionLg(),
               );
             }
           },
@@ -291,7 +291,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
     );
   }
 
-  Widget nimbusInfoSectionLg() {
+  Widget aryalInfoSectionLg() {
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return Row(
@@ -300,7 +300,7 @@ class _AboutMeSectionState extends State<AboutMeSection>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              NimbusInfoSection1(
+              AryalInfoSection1(
                 sectionTitle: StringConst.ABOUT_ME,
                 title1: StringConst.CREATIVE_DESIGN,
                 title2: StringConst.HELP,
@@ -332,9 +332,9 @@ class _AboutMeSectionState extends State<AboutMeSection>
     );
   }
 
-  Widget nimbusInfoSectionSm({required double width}) {
+  Widget aryalInfoSectionSm({required double width}) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    return NimbusInfoSection2(
+    return AryalInfoSection2(
       sectionTitle: StringConst.ABOUT_ME,
       title1: StringConst.CREATIVE_DESIGN,
       title2: StringConst.HELP,

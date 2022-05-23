@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/values/values.dart';
 
 class ContentArea extends StatelessWidget {
   final double? width;

@@ -1,13 +1,16 @@
+import 'dart:developer';
+
+import 'package:aryal/utils/functions.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
-import 'package:nimbus/presentation/widgets/skill_card.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button.dart';
+import 'package:aryal/presentation/widgets/skill_card.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class BrandSection extends StatelessWidget {
   BrandSection({Key? key});
@@ -47,23 +50,21 @@ class BrandSection extends StatelessWidget {
           SpaceH40(),
           ResponsiveBuilder(
             builder: (context, sizingInformation) {
+              // debugger();
               double screenWidth = sizingInformation.screenSize.width;
               if (screenWidth <= (RefinedBreakpoints().tabletSmall)) {
                 return Container(
                   height: heightOfCarouselSm,
                   width: widthOfScreen(context),
                   child: CarouselSlider.builder(
-                    itemCount: 15,
-                    itemBuilder: (
-                      BuildContext context,
-                      int itemIndex,
-                      int pageViewIndex,
-                    ) {
+                    itemCount: Data.skillCard.length,
+                    itemBuilder:
+                        (BuildContext context, int pageViewIndex, int index) {
                       return SkillCard(
-                        width: assignWidth(context, 0.7),
+                        width: assignWidth(context, 0.4),
                         height: heightOfCarouselSm,
-                        iconData: FontAwesomeIcons.twitter,
-                        title: "Brand",
+                        child: Data.skillCard[index].child,
+                        title: Data.skillCard[index].title,
                       );
                     },
                     options: carouselOptions(),
@@ -74,17 +75,17 @@ class BrandSection extends StatelessWidget {
                   height: heightOfCarouselMd,
                   width: widthOfScreen(context),
                   child: CarouselSlider.builder(
-                    itemCount: 15,
+                    itemCount: Data.skillCard.length,
                     itemBuilder: (
                       BuildContext context,
-                      int itemIndex,
                       int pageViewIndex,
+                      int index,
                     ) {
                       return SkillCard(
                         width: widthOfCarouselMd,
                         height: heightOfCarouselMd,
-                        iconData: FontAwesomeIcons.twitter,
-                        title: "Brand",
+                        child: Data.skillCard[index].child,
+                        title: Data.skillCard[index].title,
                       );
                     },
                     options: carouselOptions(viewportFraction: 0.2),
@@ -95,17 +96,17 @@ class BrandSection extends StatelessWidget {
                   height: heightOfCarouselLg,
                   width: widthOfScreen(context),
                   child: CarouselSlider.builder(
-                    itemCount: 15,
+                    itemCount: Data.skillCard.length,
                     itemBuilder: (
                       BuildContext context,
-                      int itemIndex,
                       int pageViewIndex,
+                      int index,
                     ) {
                       return SkillCard(
                         width: 200,
                         height: heightOfCarouselLg,
-                        iconData: FontAwesomeIcons.twitter,
-                        title: "Brand",
+                        child: Data.skillCard[index].child,
+                        title: Data.skillCard[index].title,
                       );
                     },
                     options: carouselOptions(viewportFraction: 0.15),
@@ -117,10 +118,12 @@ class BrandSection extends StatelessWidget {
           SpaceH40(),
           Align(
             alignment: Alignment.center,
-            child: NimbusButton(
+            child: AryalButton(
               buttonTitle: StringConst.HIRE_ME,
               buttonColor: AppColors.primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                openUrlLink(StringConst.EMAIL_URL);
+              },
             ),
           ),
         ],

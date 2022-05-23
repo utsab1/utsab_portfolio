@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
 class SocialButton2Data {
   final String title;
@@ -86,11 +86,12 @@ class _SocialButton2State extends State<SocialButton2>
     ).animate(controller);
   }
 
-@override
+  @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
@@ -128,7 +129,7 @@ class _SocialButton2State extends State<SocialButton2>
               style: widget.titleStyle ??
                   textTheme.subtitle2?.copyWith(
                     fontSize: Sizes.TEXT_SIZE_13,
-                    color:  animation.value,
+                    color: animation.value,
                   ),
             ),
           ],

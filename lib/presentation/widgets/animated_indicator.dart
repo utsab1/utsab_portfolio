@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/values/values.dart';
 
 class AnimatedHoverIndicator extends StatelessWidget {
   const AnimatedHoverIndicator({
@@ -29,7 +29,6 @@ class AnimatedHoverIndicator extends StatelessWidget {
     );
   }
 }
-
 
 class AnimatedHoverIndicator2 extends StatelessWidget {
   const AnimatedHoverIndicator2({

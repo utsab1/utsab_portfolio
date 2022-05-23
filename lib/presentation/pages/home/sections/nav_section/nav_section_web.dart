@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
-import 'package:nimbus/presentation/widgets/buttons/social_button.dart';
-import 'package:nimbus/presentation/widgets/empty.dart';
-import 'package:nimbus/presentation/widgets/nav_item.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
-import 'package:nimbus/presentation/widgets/nimbus_vertical_divider.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button.dart';
+import 'package:aryal/presentation/widgets/buttons/social_button.dart';
+import 'package:aryal/presentation/widgets/empty.dart';
+import 'package:aryal/presentation/widgets/nav_item.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button_link.dart';
+import 'package:aryal/presentation/widgets/aryal_link.dart';
+import 'package:aryal/presentation/widgets/aryal_vertical_divider.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/utils/functions.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 const double logoSpaceLeftLg = 40.0;
@@ -75,16 +75,8 @@ class _NavSectionWebState extends State<NavSectionWeb> {
       child: IntrinsicHeight(
         child: Row(
           children: [
-            SizedBox(width: logoSpaceLeft),
-            InkWell(
-              onTap: () {},
-              child: Image.asset(
-                ImagePath.LOGO_DARK,
-                height: Sizes.HEIGHT_52,
-              ),
-            ),
             SizedBox(width: logoSpaceRight),
-            NimbusVerticalDivider(),
+            AryalVerticalDivider(),
             Spacer(flex: 1),
             ..._buildNavItems(widget.navItems),
             Spacer(flex: menuSpacerRight),
@@ -104,9 +96,9 @@ class _NavSectionWebState extends State<NavSectionWeb> {
                 }
               },
             ),
-            NimbusVerticalDivider(),
+            AryalVerticalDivider(),
             SizedBox(width: contactBtnSpaceLeft),
-             NimbusButton(
+            AryalButton(
               buttonTitle: StringConst.CONTACT_ME,
               width: contactBtnWidth,
               // onPressed: () => openUrlLink(StringConst.EMAIL_URL),
@@ -161,10 +153,9 @@ class _NavSectionWebState extends State<NavSectionWeb> {
         SocialButton(
           tag: socialItems[index].tag,
           iconData: socialItems[index].iconData,
-          
           onPressed: () => openUrlLink(socialItems[index].url),
         ),
-        // NimBusLink(
+        // AryalLink(
         //   url: socialItems[index].url,
         //   child: SocialButton(
         //     tag: socialItems[index].tag,

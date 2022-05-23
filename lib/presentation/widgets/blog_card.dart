@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
 import 'animated_line_through.dart';
-import 'buttons/animated_nimbus_button.dart';
+import 'buttons/animated_aryal_button.dart';
 
 class BlogCardData {
   final String category;
@@ -86,7 +86,6 @@ class _BlogCardState extends State<BlogCard> {
             children: [
               Container(
                 margin: const EdgeInsets.only(left: Sizes.MARGIN_16),
-                
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(
                     Radius.circular(Sizes.RADIUS_16),
@@ -167,7 +166,7 @@ class _BlogCardState extends State<BlogCard> {
                   textStyle: widget.titleStyle ?? textTheme.headline5,
                 ),
                 SpaceH16(),
-                AnimatedNimbusButton(
+                AnimatedAryalButton(
                   title: widget.buttonText,
                   iconData: Icons.arrow_forward_ios,
                   leadingButtonColor: widget.buttonColor,

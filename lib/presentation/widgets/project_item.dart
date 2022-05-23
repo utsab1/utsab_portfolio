@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/values/values.dart';
 
 import 'animated_indicator.dart';
 
@@ -117,7 +117,7 @@ class _ProjectItemState extends State<ProjectItem>
               widget.imageUrl,
               width: widget.width,
               height: widget.height,
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
             Positioned(
               bottom: 0,

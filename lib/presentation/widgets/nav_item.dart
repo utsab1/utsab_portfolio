@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/selected_indicator.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/selected_indicator.dart';
+import 'package:aryal/values/values.dart';
 
 import 'animated_indicator.dart';
 

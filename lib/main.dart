@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
-import 'package:nimbus/presentation/routes/router.gr.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/routes/router.gr.dart';
+import 'package:aryal/values/values.dart';
 
 import 'app_theme.dart';
 
 void main() {
-  runApp(Nimbus());
+  runApp(aryal());
 }
 
-class Nimbus extends StatelessWidget {
+class aryal extends StatelessWidget {
   final _appRouter = AppRouter();
- 
+
   @override
   Widget build(BuildContext context) {
     return Layout(

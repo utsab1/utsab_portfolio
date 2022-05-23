@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/values/values.dart';
 import 'package:url_launcher/link.dart';
 
-class NimbusButton extends StatelessWidget {
-  NimbusButton({
+class AryalButton extends StatelessWidget {
+  AryalButton({
     required this.buttonTitle,
     this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_60,

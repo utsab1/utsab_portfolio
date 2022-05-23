@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/values/values.dart';
 
-class NimbusVerticalDivider extends StatelessWidget {
-  const NimbusVerticalDivider({
+class AryalVerticalDivider extends StatelessWidget {
+  const AryalVerticalDivider({
     this.thickness = 0.8,
     this.width,
     this.color = AppColors.black,

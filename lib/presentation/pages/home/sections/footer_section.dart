@@ -1,15 +1,16 @@
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
-import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button.dart';
+import 'package:aryal/presentation/widgets/content_area.dart';
+import 'package:aryal/presentation/widgets/buttons/aryal_button_link.dart';
+import 'package:aryal/presentation/widgets/aryal_link.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/utils/functions.dart';
+import 'package:aryal/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List<FooterItem> footerItems = [
   FooterItem(
@@ -21,11 +22,6 @@ List<FooterItem> footerItems = [
     title: StringConst.MAIL_ME + ":",
     subtitle: StringConst.DEV_EMAIL_2,
     iconData: FontAwesomeIcons.paperPlane,
-  ),
-  FooterItem(
-    title: StringConst.FOLLOW_ME_2 + ":",
-    subtitle: StringConst.BEHANCE_ID,
-    iconData: FontAwesomeIcons.behance,
   ),
 ];
 
@@ -75,123 +71,7 @@ class _FooterSectionState extends State<FooterSection> {
               }
             },
           ),
-          SpaceH20(),
-          InkWell(
-            onTap: () => openUrlLink(StringConst.WEB_GENIUS_LAB_URL),
-            child: RichText(
-              text: TextSpan(
-                text: StringConst.RIGHTS_RESERVED + " ",
-                style: footerTextStyle,
-                children: [
-                  TextSpan(text: StringConst.DESIGNED_BY + " "),
-                  TextSpan(
-                    text: StringConst.WEB_GENIUS_LAB,
-                    style: footerTextStyle?.copyWith(
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w900,
-                      color: AppColors.black,
-                    ),
-                  ),
-                ],
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          // NimBusLink(
-          //   url: StringConst.WEB_GENIUS_LAB_URL,
-          //   child: RichText(
-          //     text: TextSpan(
-          //       text: StringConst.RIGHTS_RESERVED + " ",
-          //       style: footerTextStyle,
-          //       children: [
-          //         TextSpan(text: StringConst.DESIGNED_BY + " "),
-          //         TextSpan(
-          //           text: StringConst.WEB_GENIUS_LAB,
-          //           style: footerTextStyle?.copyWith(
-          //             decoration: TextDecoration.underline,
-          //             fontWeight: FontWeight.w900,
-          //             color: AppColors.black,
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
           SpaceH4(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Center(
-                  child:InkWell(
-                    onTap: () => openUrlLink(StringConst.DAVID_LEGEND_URL),
-                    child: RichText(
-                      text: TextSpan(
-                        text: StringConst.BUILT_BY + " ",
-                        style: footerTextStyle,
-                        children: [
-                          TextSpan(
-                            text: StringConst.DAVID_COBBINA + ". ",
-                            style: footerTextStyle?.copyWith(
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.w900,
-                              color: AppColors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  //  NimBusLink(
-                  //   url: StringConst.DAVID_LEGEND_URL,
-                  //   child: RichText(
-                  //     text: TextSpan(
-                  //       text: StringConst.BUILT_BY + " ",
-                  //       style: footerTextStyle,
-                  //       children: [
-                  //         TextSpan(
-                  //           text: StringConst.DAVID_COBBINA + ". ",
-                  //           style: footerTextStyle?.copyWith(
-                  //             decoration: TextDecoration.underline,
-                  //             fontWeight: FontWeight.w900,
-                  //             color: AppColors.black,
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
-                ),
-              ),
-            ],
-          ),
-          SpaceH4(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
-              SpaceW4(),
-              ClipRRect(
-                borderRadius: BorderRadius.all(const Radius.circular(20)),
-                child: Image.asset(
-                  ImagePath.GHANA_FLAG,
-                  width: Sizes.WIDTH_16,
-                  height: Sizes.HEIGHT_16,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              SpaceW4(),
-              Text(StringConst.WITH_LOVE, style: footerTextStyle),
-              SpaceW4(),
-              Icon(
-                FontAwesomeIcons.solidHeart,
-                color: AppColors.red,
-                size: Sizes.ICON_SIZE_12,
-              ),
-            ],
-          ),
-          SpaceH20(),
         ],
       ),
     );
@@ -269,10 +149,12 @@ class _FooterSectionState extends State<FooterSection> {
                   SpaceH60(),
                   ..._buildFooterItems(footerItems),
                   SpaceH60(),
-                  NimbusButton(
+                  AryalButton(
                     buttonTitle: StringConst.HIRE_ME,
                     buttonColor: AppColors.primaryColor,
-                    onPressed: () {},
+                    onPressed: () {
+                      openUrlLink(StringConst.EMAIL_URL);
+                    },
                   ),
                   SpaceH80(),
                 ],
@@ -339,7 +221,7 @@ class _FooterSectionState extends State<FooterSection> {
                   ],
                 ),
                 Spacer(),
-                NimBusButtonLink(
+                AryalButtonLink(
                   url: StringConst.EMAIL_URL,
                   buttonTitle: StringConst.HIRE_ME,
                   buttonColor: AppColors.primaryColor,

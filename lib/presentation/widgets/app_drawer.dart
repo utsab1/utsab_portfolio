@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
-import 'package:nimbus/values/values.dart';
+import 'package:aryal/presentation/layout/adaptive.dart';
+import 'package:aryal/presentation/widgets/spaces.dart';
+import 'package:aryal/utils/functions.dart';
+import 'package:aryal/values/values.dart';
 
 import 'nav_item.dart';
 
@@ -50,14 +50,6 @@ class _AppDrawerState extends State<AppDrawer> {
             children: [
               Row(
                 children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Image.asset(
-                      ImagePath.LOGO_LIGHT,
-                      height: Sizes.HEIGHT_52,
-                    ),
-                  ),
-                  Spacer(),
                   InkWell(
                     onTap: widget.onClose ?? () => _closeDrawer(),
                     child: Icon(
@@ -184,30 +176,30 @@ class _AppDrawerState extends State<AppDrawer> {
           ],
         ),
         SpaceH4(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
-            SpaceW4(),
-            ClipRRect(
-              borderRadius: BorderRadius.all(const Radius.circular(20)),
-              child: Image.asset(
-                ImagePath.GHANA_FLAG,
-                width: Sizes.WIDTH_16,
-                height: Sizes.HEIGHT_16,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SpaceW4(),
-            Text(StringConst.WITH_LOVE, style: footerTextStyle),
-            SpaceW4(),
-            Icon(
-              FontAwesomeIcons.solidHeart,
-              color: AppColors.red,
-              size: Sizes.ICON_SIZE_12,
-            ),
-          ],
-        ),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
+        //     SpaceW4(),
+        //     ClipRRect(
+        //       borderRadius: BorderRadius.all(const Radius.circular(20)),
+        //       child: Image.asset(
+        //         ImagePath.GHANA_FLAG,
+        //         width: Sizes.WIDTH_16,
+        //         height: Sizes.HEIGHT_16,
+        //         fit: BoxFit.cover,
+        //       ),
+        //     ),
+        //     SpaceW4(),
+        // Text(StringConst.WITH_LOVE, style: footerTextStyle),
+        // SpaceW4(),
+        // Icon(
+        //   FontAwesomeIcons.solidHeart,
+        //   color: AppColors.red,
+        //   size: Sizes.ICON_SIZE_12,
+        // ),
+        // ],
+        // ),
       ],
     );
   }
