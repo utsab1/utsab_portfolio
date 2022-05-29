@@ -221,10 +221,13 @@ class _FooterSectionState extends State<FooterSection> {
                   ],
                 ),
                 Spacer(),
-                AryalButtonLink(
+                AryalButton(
                   url: StringConst.EMAIL_URL,
                   buttonTitle: StringConst.HIRE_ME,
                   buttonColor: AppColors.primaryColor,
+                  onPressed: () {
+                    openUrlLink(StringConst.EMAIL_URL);
+                  },
                 ),
                 Spacer(flex: 2),
               ],

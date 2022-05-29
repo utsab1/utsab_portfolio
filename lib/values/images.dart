@@ -19,8 +19,8 @@ class ImagePath {
 
   // Dots Images
   static const String DOTS_GLOBE_GREY = "$imageDir/dots_globe_grey.png";
-  static const String DOTS_GLOBE_YELLOW = "$imageDir/dots_globe_yellow.png";
-  static const String DOTS_GLOBE_YELLOW_2 = "$imageDir/dots_globe_yellow2.png";
+  static const String DOTS_GLOBE_YELLOW = "$imageDir/circular.png";
+  static const String DOTS_GLOBE_YELLOW_2 = "$imageDir/circular.png";
 
   // Dev
   static const String DEV_ABOUT_ME = "$imageDir/dev_aboutme.png";

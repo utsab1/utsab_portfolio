@@ -1,3 +1,4 @@
+import 'dart:html' as html;
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:aryal/presentation/layout/adaptive.dart';
@@ -230,13 +231,17 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                             SpaceH40(),
                             Row(
                               children: [
-                                // AryalButton(
-                                //   width: buttonWidth,
-                                //   height: buttonHeight,
-                                //   buttonTitle: StringConst.DOWNLOAD_CV,
-                                //   buttonColor: AppColors.primaryColor,
-                                //   onPressed: () {},
-                                // ),
+                                AryalButton(
+                                  width: buttonWidth,
+                                  height: buttonHeight,
+                                  buttonTitle: StringConst.DOWNLOAD_CV,
+                                  buttonColor: AppColors.primaryColor,
+                                  onPressed: () {
+                                    html.window.open(
+                                        "https://drive.google.com/file/d/1PxmHoLMksn5bplyPB93UBsxsPl5wvMFG/view?usp=sharing",
+                                        "Utsab");
+                                  },
+                                ),
                                 SpaceW16(),
                                 AryalButton(
                                   width: buttonWidth,

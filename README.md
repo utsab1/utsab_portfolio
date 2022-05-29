@@ -1,18 +1,16 @@
-<!-- # aryal
+# utsab_portfolio
 
-<h1 align="center">
-  <a href="https://david-legend.github.io/aryal/" target="_blank">https://david-legend.github.io/aryal/</a>
-</h1>
+A new Flutter project.
 
-<p align="center">
-    This is aryal (Portfolio & CV), a beautifully designed portfolio website built with <strong>flutter</strong>.
-</p>
-<p align="center">
-    It is inspired by <a href="https://www.behance.net/gallery/96275519/aryal-CV-Portfolio-WordPress-Theme" target="_blank">Web Genius Lab Designs on Behance</a>
-</p>
+## Getting Started
 
+This project is a starting point for a Flutter application.
 
-<br/><br/>
+A few resources to get you started if this is your first Flutter project:
 
-![Screenshot](assets/screenshots/aryal.jpg)
-![Screenshot](assets/screenshots/aryal_2.jpg) -->
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
