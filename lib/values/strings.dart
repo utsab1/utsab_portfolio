@@ -133,18 +133,19 @@ class StringConst {
   static const String AWARDS_TITLE = "Solving Problems";
   static const String AWARDS_DESC =
       "I always try to discover the new and the best technologies and use them to make my client feel comfortable and satosfied";
-  // static const String AWARDS_TYPE_TITLE_1 = "In Press";
-  // static const String AWARDS_TYPE_TITLE_2 = "Awards";
-  // static const String AWARDS_1 = "Forbes";
-  // static const String AWARDS_2 = "New York Times";
-  // static const String AWARDS_3 = "Smashing Magazine";
-  // static const String AWARDS_4 = "Entrepreneur";
-  // static const String AWARDS_5 = "First Magazine";
-  // static const String AWARDS_6 = "The Type Direction Club 60";
-  // static const String AWARDS_7 = "ClassiCon-Brochure 2017";
-  // static const String AWARDS_8 = "The Good Design Awards 2017";
-  // static const String AWARDS_9 = "For Print Only-Under consideration";
-  // static const String AWARDS_10 = "CI Magazine 2017";
+  static const String AWARDS_TYPE_TITLE_1 = "Skills";
+  static const String AWARDS_TYPE_TITLE_2 = "Cerifications";
+  static const String AWARDS_1 = "Problem Solving";
+  static const String AWARDS_2 = "Creativity";
+  static const String AWARDS_3 = "Teamwork";
+  static const String AWARDS_4 = "Networking";
+  static const String AWARDS_5 = "Good knowledge\nof Git and Clickup";
+
+  static const String AWARDS_6 = "Flutter";
+  static const String AWARDS_7 = "Technical Support\nFundamentals";
+  static const String AWARDS_8 = "Advance SEO\nStrategies";
+  static const String AWARDS_9 = "Branch Fundamentals\nFor Mobile\nGrowth";
+  // static const String AWARDS_10 = "The Bits and\nBytes of Computer\nNetworking";
 
   //Brands Section
   static const String BRANDS_SECTION_TITLE = "Brands I've worked with";

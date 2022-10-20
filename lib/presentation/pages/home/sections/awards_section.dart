@@ -149,9 +149,9 @@ class _AwardsSectionState extends State<AwardsSection>
       body: StringConst.AWARDS_DESC,
       child: Column(
         children: [
-          // _buildAwards1(),
+          _buildAwards1(),
           SpaceH40(),
-          // _buildAwards2(),
+          _buildAwards2(),
           SpaceH40(),
         ],
       ),
@@ -167,9 +167,9 @@ class _AwardsSectionState extends State<AwardsSection>
       child: Container(
         child: Row(
           children: [
-            // _buildAwards1(),
+            _buildAwards1(),
             Spacer(),
-            // _buildAwards2(),
+            _buildAwards2(),
             Spacer(flex: 4),
           ],
         ),
@@ -249,37 +249,37 @@ class _AwardsSectionState extends State<AwardsSection>
         ],
       ),
     );
-    // }
-
-    // Widget _buildAwards1() {
-    //   TextTheme textTheme = Theme.of(context).textTheme;
-    //   return Column(
-    //     crossAxisAlignment: CrossAxisAlignment.start,
-    //     children: [
-    //       Text(
-    //         StringConst.AWARDS_TYPE_TITLE_1,
-    //         style: textTheme.headline6,
-    //       ),
-    //       SpaceH16(),
-    //       ..._buildAwards(Data.awards1),
-    //     ],
-    //   );
   }
 
-  // Widget _buildAwards2() {
-  //   TextTheme textTheme = Theme.of(context).textTheme;
-  //   return Column(
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     children: [
-  //       Text(
-  //         StringConst.AWARDS_TYPE_TITLE_2,
-  //         style: textTheme.headline5,
-  //       ),
-  //       SpaceH16(),
-  //       ..._buildAwards(Data.awards1),
-  //     ],
-  //   );
-  // }
+  Widget _buildAwards1() {
+    TextTheme textTheme = Theme.of(context).textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          StringConst.AWARDS_TYPE_TITLE_1,
+          style: textTheme.headline6,
+        ),
+        SpaceH16(),
+        ..._buildAwards(Data.awards1),
+      ],
+    );
+  }
+
+  Widget _buildAwards2() {
+    TextTheme textTheme = Theme.of(context).textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          StringConst.AWARDS_TYPE_TITLE_2,
+          style: textTheme.headline5,
+        ),
+        SpaceH16(),
+        ..._buildAwards(Data.awards2),
+      ],
+    );
+  }
 
   List<Widget> _buildAwards(List<String> awards) {
     List<Widget> items = [];

@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage>
     NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
     NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
     NavItemData(name: StringConst.AWARDS, key: GlobalKey()),
-    // NavItemData(name: StringConst.BRAND, key: GlobalKey()),
+    NavItemData(name: StringConst.BRAND, key: GlobalKey()),
   ];
 
   @override
@@ -195,10 +195,10 @@ class _HomePageState extends State<HomePage>
                             child: AwardsSection(),
                           ),
                           SpaceH40(),
-                          // Container(
-                          //   key: navItems[5].key,
-                          //   child: BrandSection(),
-                          // ),
+                          Container(
+                            key: navItems[5].key,
+                            child: BrandSection(),
+                          ),
                           FooterSection(),
                         ],
                       )

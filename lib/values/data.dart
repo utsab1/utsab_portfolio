@@ -149,6 +149,27 @@ class Data {
           ],
         )),
 //not being used
+    SkillCard(
+        description: "",
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              ImagePath.BRAD_4,
+              width: 80,
+              height: 80,
+            ),
+            SpaceH12(),
+            SelectableText(
+              StringConst.BRAND_04,
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black45),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        )),
 
     SkillCard(
         title: StringConst.BRAND_05,
@@ -190,20 +211,20 @@ class Data {
     ProjectCategoryData(title: StringConst.WEB_DESIGN, number: 2),
   ];
 
-  // static List<String> awards1 = [
-  //   StringConst.AWARDS_1,
-  //   StringConst.AWARDS_2,
-  //   StringConst.AWARDS_3,
-  //   StringConst.AWARDS_4,
-  //   StringConst.AWARDS_5,
-  // ];
-  // static List<String> awards2 = [
-  //   StringConst.AWARDS_6,
-  //   StringConst.AWARDS_7,
-  //   StringConst.AWARDS_8,
-  //   StringConst.AWARDS_9,
-  //   StringConst.AWARDS_10,
-  // ];
+  static List<String> awards1 = [
+    StringConst.AWARDS_1,
+    StringConst.AWARDS_2,
+    StringConst.AWARDS_3,
+    StringConst.AWARDS_4,
+    StringConst.AWARDS_5,
+  ];
+  static List<String> awards2 = [
+    StringConst.AWARDS_6,
+    StringConst.AWARDS_7,
+    StringConst.AWARDS_8,
+    StringConst.AWARDS_9,
+    // StringConst.AWARDS_10,
+  ];
   // static List<BlogCardData> blogData = [
   //   BlogCardData(
   //     category: StringConst.BLOG_CATEGORY_1,

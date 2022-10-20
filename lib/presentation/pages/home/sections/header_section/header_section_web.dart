@@ -238,8 +238,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   buttonColor: AppColors.primaryColor,
                                   onPressed: () {
                                     html.window.open(
-                                        "https://drive.google.com/file/d/1PxmHoLMksn5bplyPB93UBsxsPl5wvMFG/view?usp=sharing",
-                                        "Utsab");
+                                        "https://drive.google.com/file/d/1WYGCW1T4JtauAnWPBj3Of-J4PneIEq_T/view?usp=sharing",
+                                        "Utsab CV");
                                   },
                                 ),
                                 SpaceW16(),

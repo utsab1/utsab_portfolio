@@ -148,7 +148,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
                     child: ContentArea(
                       width: contentAreaWidth,
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ContentArea(
@@ -231,7 +231,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
           scale: _projectScaleAnimation,
           child: ProjectItem(
             width: isMobile
-                ? assignWidth(context, data[index].mobileWidth)
+                ? assignWidth(context, data[index].mobileHeight)
                 : assignWidth(context, data[index].width),
             height: isMobile
                 ? assignHeight(context, data[index].mobileHeight)

@@ -19,7 +19,7 @@ class BrandSection extends StatelessWidget {
     bool enlargeCenterPage = false,
     double viewportFraction = 1.0,
     double aspectRatio = 0.1,
-    int initialPage = 2,
+    int initialPage = 0,
     ScrollPhysics? scrollPhysics = const NeverScrollableScrollPhysics(),
   }) {
     return CarouselOptions(
@@ -50,7 +50,6 @@ class BrandSection extends StatelessWidget {
           SpaceH40(),
           ResponsiveBuilder(
             builder: (context, sizingInformation) {
-              // debugger();
               double screenWidth = sizingInformation.screenSize.width;
               if (screenWidth <= (RefinedBreakpoints().tabletSmall)) {
                 return Container(
@@ -75,17 +74,13 @@ class BrandSection extends StatelessWidget {
                   height: heightOfCarouselMd,
                   width: widthOfScreen(context),
                   child: CarouselSlider.builder(
-                    itemCount: Data.skillCard.length,
-                    itemBuilder: (
-                      BuildContext context,
-                      int pageViewIndex,
-                      int index,
-                    ) {
+                    itemCount: Data.skillCard.map((e) => e).length,
+                    itemBuilder: (BuildContext context, int pageViewIndex, _) {
                       return SkillCard(
                         width: widthOfCarouselMd,
                         height: heightOfCarouselMd,
-                        child: Data.skillCard[index].child,
-                        title: Data.skillCard[index].title,
+                        child: Data.skillCard[pageViewIndex].child,
+                        title: Data.skillCard[pageViewIndex].title,
                       );
                     },
                     options: carouselOptions(viewportFraction: 0.2),
@@ -98,15 +93,15 @@ class BrandSection extends StatelessWidget {
                   child: CarouselSlider.builder(
                     itemCount: Data.skillCard.length,
                     itemBuilder: (
-                      BuildContext context,
+                      BuildContext ctx,
                       int pageViewIndex,
                       int index,
                     ) {
                       return SkillCard(
                         width: 200,
                         height: heightOfCarouselLg,
-                        child: Data.skillCard[index].child,
-                        title: Data.skillCard[index].title,
+                        child: Data.skillCard[pageViewIndex].child,
+                        title: Data.skillCard[pageViewIndex].title,
                       );
                     },
                     options: carouselOptions(viewportFraction: 0.15),
@@ -116,16 +111,16 @@ class BrandSection extends StatelessWidget {
             },
           ),
           SpaceH40(),
-          Align(
-            alignment: Alignment.center,
-            child: AryalButton(
-              buttonTitle: StringConst.HIRE_ME,
-              buttonColor: AppColors.primaryColor,
-              onPressed: () {
-                openUrlLink(StringConst.EMAIL_URL);
-              },
-            ),
-          ),
+          // Align(
+          //   alignment: Alignment.center,
+          //   child: AryalButton(
+          //     buttonTitle: StringConst.HIRE_ME,
+          //     buttonColor: AppColors.primaryColor,
+          //     onPressed: () {
+          //       openUrlLink(StringConst.EMAIL_URL);
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );

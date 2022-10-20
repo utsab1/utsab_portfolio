@@ -34,11 +34,11 @@ class ImagePath {
   static const String BLOG_03 = "$imageDir/blog_03.jpg";
 
   // Portfolio Images
-  static const String PORTFOLIO_1 = "$imageDir/portfolio_01.jpeg";
-  static const String PORTFOLIO_2 = "$imageDir/portfolio_02.jpeg";
+  static const String PORTFOLIO_1 = "$imageDir/portfolio_01.png";
+  static const String PORTFOLIO_2 = "$imageDir/portfolio_02.png";
   static const String PORTFOLIO_3 = "$imageDir/portfolio_03.png";
-  static const String PORTFOLIO_4 = "$imageDir/portfolio_04.jpeg";
-  static const String PORTFOLIO_5 = "$imageDir/portfolio_05.jpeg";
+  static const String PORTFOLIO_4 = "$imageDir/portfolio_04.png";
+  static const String PORTFOLIO_5 = "$imageDir/portfolio_05.png";
   static const String PORTFOLIO_6 = "$imageDir/portfolio_06.png";
 
   static const String PORTFOLIO_7 = "$imageDir/portfolio_07.png";
@@ -51,6 +51,6 @@ class ImagePath {
   static const String BRAD_1 = "$imageDir/brand_01.jpeg";
   static const String BRAD_2 = "$imageDir/brand_02.png";
   static const String BRAD_3 = "$imageDir/brand_03.png";
-  static const String BRAD_4 = "$imageDir/brand_04.jpeg";
+  static const String BRAD_4 = "$imageDir/brand_04.png";
   static const String BRAD_5 = "$imageDir/brand_05.png";
 }

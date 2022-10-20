@@ -115,9 +115,9 @@ class _ProjectItemState extends State<ProjectItem>
           children: [
             Image.asset(
               widget.imageUrl,
-              width: widget.width,
+              // width: widget.width,
               height: widget.height,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
             Positioned(
               bottom: 0,
@@ -190,6 +190,7 @@ class ProjectCover extends StatelessWidget {
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return Container(
+      alignment: Alignment.center,
       width: width,
       height: height,
       color: color ?? Colors.black.withOpacity(0.8),
@@ -203,26 +204,31 @@ class ProjectCover extends StatelessWidget {
           SpaceW16(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                title,
-                style: titleStyle ??
-                    textTheme.headline6?.copyWith(
-                      color: AppColors.white,
-                    ),
+              Center(
+                child: Text(
+                  title,
+                  style: titleStyle ??
+                      textTheme.headline6?.copyWith(
+                        color: AppColors.white,
+                      ),
+                ),
               ),
               SpaceH8(),
-              Text(
-                subtitle,
-                style: subtitleStyle ??
-                    textTheme.subtitle2?.copyWith(
-                      color: AppColors.white,
-                      fontSize: Sizes.TEXT_SIZE_16,
-                    ),
+              Center(
+                child: Text(
+                  subtitle,
+                  style: subtitleStyle ??
+                      textTheme.subtitle2?.copyWith(
+                        color: AppColors.white,
+                        fontSize: Sizes.TEXT_SIZE_16,
+                      ),
+                ),
               ),
             ],
-          )
+          ),
+          SpaceW16(),
         ],
       ),
     );
