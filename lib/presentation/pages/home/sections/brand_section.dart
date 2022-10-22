@@ -37,7 +37,7 @@ class BrandSection extends StatelessWidget {
     TextTheme textTheme = Theme.of(context).textTheme;
     double heightOfCarouselSm = assignWidth(context, 0.40);
     double widthOfCarouselMd = assignWidth(context, 0.33);
-    double heightOfCarouselMd = widthOfCarouselMd / 2;
+    double heightOfCarouselMd = widthOfCarouselMd / 1.4;
     double heightOfCarouselLg = 150;
     return Container(
       child: Column(
@@ -62,8 +62,8 @@ class BrandSection extends StatelessWidget {
                       return SkillCard(
                         width: assignWidth(context, 0.4),
                         height: heightOfCarouselSm,
-                        child: Data.skillCard[index].child,
-                        title: Data.skillCard[index].title,
+                        child: Data.skillCard[pageViewIndex].child,
+                        title: Data.skillCard[pageViewIndex].title,
                       );
                     },
                     options: carouselOptions(),

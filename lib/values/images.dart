@@ -4,6 +4,7 @@ class ImagePath {
   //images route
   static const String imageDir = "assets/images";
   static const String screenshotsDir = "assets/screenshots";
+  static const String LOGO = "$imageDir/logo.png";
 
   // Blobs
   static const String BLOB_ASH = "$imageDir/blob_ash.png";
